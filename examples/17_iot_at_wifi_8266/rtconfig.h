@@ -13,8 +13,14 @@
 #define RT_TICK_PER_SECOND 1000
 #define RT_USING_OVERFLOW_CHECK
 #define RT_USING_HOOK
+#define RT_USING_IDLE_HOOK
 #define RT_IDEL_HOOK_LIST_SIZE 4
 #define IDLE_THREAD_STACK_SIZE 256
+#define RT_DEBUG
+#define RT_DEBUG_INIT_CONFIG
+#define RT_DEBUG_INIT 1
+#define RT_DEBUG_MODULE_CONFIG
+#define RT_DEBUG_MODULE 1
 
 /* Inter-Thread communication */
 
@@ -36,6 +42,7 @@
 #define RT_USING_CONSOLE
 #define RT_CONSOLEBUF_SIZE 256
 #define RT_CONSOLE_DEVICE_NAME "uart1"
+#define RT_VER_NUM 0x40000
 
 /* RT-Thread Components */
 
@@ -72,6 +79,7 @@
 #define RT_PIPE_BUFSZ 512
 #define RT_USING_SERIAL
 #define RT_USING_PIN
+#define RT_USING_SPI
 
 /* Using WiFi */
 
@@ -104,10 +112,12 @@
 /* AT commands */
 
 #define RT_USING_AT
+#define AT_DEBUG
 #define AT_USING_CLIENT
 #define AT_CLIENT_NUM_MAX 1
 #define AT_USING_SOCKET
 #define AT_USING_CLI
+#define AT_PRINT_RAW_CMD
 #define AT_SW_VERSION_NUM 0x10200
 
 /* VBUS(Virtual Software BUS) */
@@ -115,6 +125,9 @@
 
 /* Utilities */
 
+#define RT_USING_LOGTRACE
+#define LOG_TRACE_MAX_SESSION 16
+#define LOG_TRACE_USING_LEVEL_DEBUG
 
 /* RT-Thread online packages */
 
@@ -133,10 +146,21 @@
 #define AT_DEVICE_SOCKETS_NUM 5
 #define AT_DEVICE_NAME "uart2"
 #define AT_DEVICE_RECV_BUFF_LEN 512
-#define AT_DEVICE_WIFI_SSID "rtthread"
-#define AT_DEVICE_WIFI_PASSWORD "12345678"
-#define PKG_USING_AT_DEVICE_V140
-#define PKG_AT_DEVICE_VER_NUM 0x10400
+#define AT_DEVICE_WIFI_SSID "by2017"
+#define AT_DEVICE_WIFI_PASSWORD "by2017ok"
+#define PKG_USING_AT_DEVICE_LATEST_VERSION
+#define PKG_AT_DEVICE_VER_NUM 0x99999
+#define PKG_USING_WIZNET
+#define WIZ_USING_W5500
+
+/* WIZnet device configure */
+
+#define WIZ_SPI_DEVICE "spi20"
+#define WIZ_RST_PIN 85
+#define WIZ_IRQ_PIN 84
+#define WIZ_USING_DHCP
+#define WIZ_USING_PING
+#define PKG_USING_WIZNET_V100
 
 /* IoT Cloud */
 
@@ -158,22 +182,13 @@
 
 /* peripheral libraries and drivers */
 
+/* sensors drivers */
+
 
 /* miscellaneous packages */
 
 
-/* sample package */
-
 /* samples: kernel and components samples */
-
-
-/* example package: hello */
-
-
-/* Privated Packages of RealThread */
-
-
-/* Network Utilities */
 
 
 /* Hardware Drivers Config */
@@ -189,6 +204,9 @@
 
 #define BSP_USING_UART1
 #define BSP_USING_UART2
+#define BSP_USING_UART3
+#define BSP_UART_USING_DMA_RX
+#define BSP_USING_SPI2
 #define BSP_USING_GPIO
 
 /* External Libraries */

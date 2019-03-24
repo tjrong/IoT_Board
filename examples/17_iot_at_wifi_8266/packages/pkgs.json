@@ -1,7 +1,12 @@
 [
  {
   "path": "/packages/iot/at_device", 
-  "ver": "v1.4.0", 
+  "ver": "latest", 
   "name": "AT_DEVICE"
+ }, 
+ {
+  "path": "/packages/iot/wiznet", 
+  "ver": "v1.0.0", 
+  "name": "WIZNET"
  }
 ]
